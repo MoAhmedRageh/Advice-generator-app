@@ -1,0 +1,84 @@
+@use "./scss/global" as *;
+@use "./scss/variables" as *;
+@use "./scss/mixins" as *;
+
+body {
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Manrope";
+    font-weight: 800;
+    padding: 0 20px;
+
+    .card {
+        background-color: var(--dark-grayish-blue);
+        max-width: 450px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px;
+        padding-bottom: 0;
+        border-radius: 12px;
+        @include breakpoint-down(500px) {
+            gap: 12px;
+        }
+        
+        &__title {
+            color: var(--noen-green);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            @include breakpoint-down(500px) {
+                font-size: 0.7rem;
+            }
+        }
+
+        &__advice {
+            color: var(--light-cyan);
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.4;
+            @include breakpoint-down(500px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            min-width: 240px;
+            margin-top: 12px;
+            margin-bottom: -8px;
+        }
+
+        &__btn {
+            background: var(--noen-green);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transform: translateY(20px);
+            transition: 0.3s;
+            cursor: pointer;
+            @include breakpoint-down(500px) {
+                width: 44px;
+                height: 44px;
+            }
+
+            &:hover {
+                box-shadow: 0 0 25px 0px var(--noen-green);
+            }
+        }
+
+        &__dice {
+            width: 18px;
+        }
+    }
+}
+
